@@ -4,6 +4,11 @@ const router = express.Router();
 
 router.use(express.static('public'));
 
+router.get('/', (req, res) => res.render('pages/home', {
+	title: 'Coffee Shop Home',
+	name: 'Welcome to the Coffee Shop'
+}));
+
 router.get('*', (req, res) => {
 	switch (req.url) {
 		case '/favicon.ico':
@@ -12,6 +17,7 @@ router.get('*', (req, res) => {
 		default:
 			res.status(404).render('pages/404', {
 				title: '404 Error',
+				name: '404 Error',
 			});
 			break;
 	}
