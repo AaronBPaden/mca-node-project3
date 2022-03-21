@@ -1,0 +1,23 @@
+<%- include('../partials/header'); %>
+<main class="main container-fluid">
+	<h2><%= name %></h2>
+	<div class="product-list">
+		<% data.forEach(el => { %>
+			<div class="item-box">
+				<h3><%= el.title %></h3>
+				<p class="item-desc">
+					<%= el.description %>
+				</p>
+				<h4>Ingredients</h4>
+				<ol>
+					<% el.ingredients.forEach(i => { %>
+						<li>
+							<%= i %>
+						</li>
+					<% }); %>
+				</ol>
+			</div>
+		<% }); %>
+	</div>
+</main>
+<%- include('../partials/footer'); %>

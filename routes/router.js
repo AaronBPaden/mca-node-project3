@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 router.use(express.static('public'));
+router.use('/coffee', require('./api/coffeeRoutes'));
 
 router.get('/', (req, res) => res.render('pages/home', {
 	title: 'Coffee Shop Home',
