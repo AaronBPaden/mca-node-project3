@@ -3,20 +3,22 @@
 	<h2><%= name %></h2>
 	<div class="product-list">
 		<% data.forEach(el => { %>
-			<div class="item-box">
-				<h3><%= el.title %></h3>
-				<p class="item-desc">
-					<%= el.description %>
-				</p>
-				<h4>Ingredients</h4>
-				<ol>
-					<% el.ingredients.forEach(i => { %>
-						<li>
-							<%= i %>
-						</li>
-					<% }); %>
-				</ol>
-			</div>
+			<a href="<%= data.productType %>/<%= el.id %>">
+				<div class="item-box">
+					<h3><%= el.title %></h3>
+					<p class="item-desc">
+						<%= el.description %>
+					</p>
+					<h4>Ingredients</h4>
+					<ol>
+						<% el.ingredients.forEach(i => { %>
+							<li>
+								<%= i %>
+							</li>
+						<% }); %>
+					</ol>
+				</div>
+			</a>
 		<% }); %>
 	</div>
 </main>

@@ -1,0 +1,14 @@
+<%- include('../partials/header'); %>
+<main class="main container-fluid">
+	<h2><%= name %></h2>
+	<div class="product">
+		<h3><%= data.title %></h3>
+		<p class="item-desc"><%= data.description %></p>
+		<ul>
+			<% data.ingredients.forEach(el => { %>
+				<li><%= el %></li>
+			<% }); %>
+		</ul>
+	</div>
+</main>
+<%- include('../partials/footer'); %>
